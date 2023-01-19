@@ -1,0 +1,141 @@
+-------------------------------------------------Discounts------------------------------------------------------------
+INSERT INTO Discount (discountID, CustomeraccountNumber, fixedDiscount, flexibleDiscount, variableDiscount)
+Values ('1','1', '2', NULL, NULL);
+
+INSERT INTO Discount (discountID, CustomeraccountNumber, fixedDiscount, flexibleDiscount, variableDiscount)
+Values ('2','3', '4', NULL, NULL);
+
+INSERT INTO Discount (discountID, CustomeraccountNumber, fixedDiscount, flexibleDiscount, variableDiscount)
+Values ('3','4', NULL, '1,2,4,3,5,1', NULL);
+
+INSERT INTO Discount (discountID, CustomeraccountNumber, fixedDiscount, flexibleDiscount, variableDiscount)
+Values ('4','5', NULL, NULL, '1000,0,2000,2,3');
+
+INSERT INTO Discount (discountID, CustomeraccountNumber, fixedDiscount, flexibleDiscount, variableDiscount)
+Values ('5','6', '2', NULL, NULL);
+
+
+-------------------------------------------------Report--------------------------------------------------------------
+INSERT INTO Report(reportID, StaffstaffID, date, type) 
+VALUES ('1', '1', '15.03.2021', staffReport);
+
+INSERT INTO Report(reportID, StaffstaffID, date, type) 
+VALUES ('2', '1', '15.03.2021', shiftReport);
+
+INSERT INTO Report(reportID, StaffstaffID, date, type) 
+VALUES ('3', '3', '17.03.2021', jobReport);
+
+INSERT INTO Report(reportID, StaffstaffID, date, type) 
+VALUES ('4', '4', '18.03.2021', jobReport);
+
+INSERT INTO Report(reportID, StaffstaffID, date, type) 
+VALUES ('5', '4', '18.03.2021', jobReport);
+
+-------------------------------------------------Query--------------------------------------------------------------
+INSERT INTO Query(queryID, senderName, message, dateEnquired, isComplete, CustomeraccountNumber) 
+VALUES ('1', 'London LTD', 'When can I get a fixed discount?', '12.02.2021', '1', '12');
+
+INSERT INTO Query(queryID, senderName, message, dateEnquired, isComplete, CustomeraccountNumber) 
+VALUES ('2', 'Liverpool LTD', 'What ype of paper do you use?', '24.02.2021', '1', '13');
+
+INSERT INTO Query(queryID, senderName, message, dateEnquired, isComplete, CustomeraccountNumber) 
+VALUES ('3', 'Inverness INC', 'Can I collect my order a week later?', '26.02.2021', '1', '14');
+
+INSERT INTO Query(queryID, senderName, message, dateEnquired, isComplete, CustomeraccountNumber) 
+VALUES ('4', 'Kent Co.', 'What are the holidays opening times?', '13.03.2021', '0', ?'15');
+
+INSERT INTO Query(queryID, senderName, message, dateEnquired, isComplete, CustomeraccountNumber) 
+VALUES ('5', 'Cardiff Co.', 'Can I pay with cheque?', '18.03.2021', '0', '16');
+
+-------------------------------------------------Login--------------------------------------------------------------
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('1', 'Manager', 'Get_it_done');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('2', 'Accountant', 'Count_money');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('3', 'Clerk', 'Paperwork');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('4', 'Hello', 'Hello_there');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('5', 'Development', 'Lot_smell');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('6', 'Copy', 'Too_dark');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('7', 'Packer', 'Pack_it');
+
+INSERT INTO Login(StaffstaffID, username, password) 
+VALUES ('8', 'Finish', 'Fine_touch');
+
+-------------------------------------------------Staff--------------------------------------------------------------
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('1', 'Micheal', 'Scott', 'manager');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('2', 'Angela', 'Martin', 'receptionist');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('3', 'Pam', 'Beesly', 'receptionist');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('4', 'Ryan', 'Howard', 'receptionist');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('5', 'Jim', 'Halpert', 'technician');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('6', 'Dwight', 'Schrutt', 'technician');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('7', 'Creed', 'Bratton', 'technician');
+
+INSERT INTO Staff(staffID, forename, surname, role) 
+VALUES ('8', 'Andy', 'Bernard', 'technician');
+
+-------------------------------------------------Location--------------------------------------------------------------
+INSERT INTO Location(locationID, name) 
+VALUES ('1', 'Copy Room');
+
+INSERT INTO Location(locationID, name) 
+VALUES ('2', 'Development area');
+
+INSERT INTO Location(locationID, name) 
+VALUES ('3', 'Packing Departments');
+
+INSERT INTO Location(locationID, name) 
+VALUES ('4', 'Finishing Room');
+
+-------------------------------------------Location Schedule--------------------------------------------------------
+INSERT INTO LocationSchedule(LocationlocationID, StaffstaffID, date, startTime, endTime) 
+VALUES ('1', '6', '18.03.2021', '0800', '1800');
+
+INSERT INTO LocationSchedule(LocationlocationID, StaffstaffID, date, startTime, endTime) 
+VALUES ('2', '5', '18.03.2021', '0900', '1600');
+
+INSERT INTO LocationSchedule(LocationlocationID, StaffstaffID, date, startTime, endTime) 
+VALUES ('3', '7', '18.03.2021', '0700', '1730');
+
+INSERT INTO LocationSchedule(LocationlocationID, StaffstaffID, date, startTime, endTime) 
+VALUES ('4', '8', '18.03.2021', '0900', '1830');
+
+
+-------------------------------------------------Payment--------------------------------------------------------------
+INSERT INTO Payment(transactionID, typeOfPayment, amount, cardType, expiryDate, endDigits, JobjobID) 
+VALUES ('1', 'cash', '120', '', '', '', '1');
+
+INSERT INTO Payment(transactionID, typeOfPayment, amount, cardType, expiryDate, endDigits, JobjobID) 
+VALUES ('2', 'cash', '56', '', '', '', '2');
+
+INSERT INTO Payment(transactionID, typeOfPayment, amount, cardType, expiryDate, endDigits, JobjobID) 
+VALUES ('3', 'cash', '116', '', '', '', '3');
+
+INSERT INTO Payment(transactionID, typeOfPayment, amount, cardType, expiryDate, endDigits, JobjobID) 
+VALUES ('4', 'card', '18', 'debt', '02.2023', '5478', '4');
+
+INSERT INTO Payment(transactionID, typeOfPayment, amount, cardType, expiryDate, endDigits, JobjobID) 
+VALUES ('5', 'card', '550', 'mastercard', '06.2026', '6514', '5');

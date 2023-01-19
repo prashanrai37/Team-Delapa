@@ -1,0 +1,77 @@
+/*Update Status to Accepted*/
+Select Order.JobjobID, Job.JobID
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID
+Update Order
+Set status = 'Accepted'
+WHERE Job_ID = 'x';
+
+/*Update Status to Processing*/
+Select Order.JobjobID, Job.JobID
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID
+Update Order
+SET status = 'Processing'
+WHERE Job_ID = 'x';
+
+/*Update Status to Completed*/
+Select Order.JobjobID, Job.JobID
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID
+Update Order
+SET status = 'Completed'
+WHERE Job_ID = 'x';
+
+/*Update Status to Delivered*/
+Select Order.JobjobID, Job.JobID
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID
+Update Order
+SET status = 'Delivered'
+WHERE Job_ID = 'x';
+
+/*Update Status to Archived*/
+Select Order.JobjobID, Job.JobID
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID
+Update Order
+SET status = 'Archived'
+WHERE Job_ID = 'x';
+
+/*Get order information*/
+Select Job.JobID, Order.JobjobID, 
+From Order
+Join Job
+ON Order.JobjobID = Job.JobID;
+
+/*Create job report*/
+SELECT Order.StaffstaffID, Report.StaffstaffID
+From Order
+Join Report
+On Order.StaffstaffID = Report.StaffstaffID;
+
+/*Initial My Account setup*/
+Select Staff.forename, Staff.surname, Staff.role
+From Staff
+Where Staff.staffID = "x";
+
+/*Get unanswered queries*/
+Select *
+From Query
+Where Query.isComplete = '0';
+
+/*Update query with reponse*/
+Update Query
+Set message = 'x'
+Where Query.queryID = 'y';
+
+/*Add a new Query*/
+INSERT `Query`(`queryID`, `senderName`, `message`, `dateEnquired`, `isComplete`) 
+VALUES 
+('21','x','y','z', NULL);
+
